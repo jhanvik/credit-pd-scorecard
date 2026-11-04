@@ -1,0 +1,37 @@
+[project]
+name = "credit-pd-scorecard"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "lightgbm>=4.7.0",
+    "matplotlib>=3.11.2",
+    "numpy>=2.5.4",
+    "pandas>=3.1.1",
+    "pyarrow>=26.0.1",
+    "python-calamine>=0.9.1",
+    "python-dotenv>=1.2.4",
+    "scikit-learn>=1.9.1",
+    "seaborn>=0.13.2",
+    "shap>=0.54.1",
+    "statsmodels>=0.15.0",
+    "xgboost>=3.4.1",
+    "xlrd>=2.0.2",
+]
+
+[project.scripts]
+credit-pd-scorecard = "credit_pd_scorecard:main"
+
+[build-system]
+requires = ["uv_build>=0.13.7,<0.14.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "ipykernel>=7.4.0",
+    "jupyterlab>=4.6.5",
+    "pre-commit>=4.7.0",
+    "pytest>=9.2.0",
+    "ruff>=0.17.3",
+]
