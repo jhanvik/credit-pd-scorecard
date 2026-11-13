@@ -43,9 +43,10 @@ A scorecard (WoE + logistic regression) is compared honestly with a LightGBM cha
   contains -2 and 0, which are not documented. In September, 0 covers about 49%
   of customers and -2 about 9%. They are treated as separate categories until
   their meaning is verified.
-- 35 rows are identical apart from ID; 1,930 rows have a negative BILL_AMT.
-- SEX, MARRIAGE, AGE, EDUCATION are demographic: SEX and MARRIAGE are excluded
-  from the model and used only in a fairness check.
+- 56 rows repeat the features of an earlier row (52 groups, ignoring ID and target); in 21 of those groups
+  the outcomes disagree (label noise). 1,930 rows have a negative BILL_AMT.
+- SEX, EDUCATION, MARRIAGE and AGE are demographic: all four are excluded from the model inputs
+  and used only in the later fairness check (verify fair-lending rules on age for your use).
 
 ## 8. Limitations
 - Single table, one cohort of Taiwanese credit-card customers; may not generalize.
