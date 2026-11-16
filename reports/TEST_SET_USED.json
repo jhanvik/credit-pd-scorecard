@@ -1,0 +1,12 @@
+{
+  "used_at_utc": "2026-11-16T21:23:47+00:00",
+  "test_rows": 6000,
+  "test_ids_sha256": "6383a8a8c1e0aed9faf0e2c923cef0cc0b4510ad841988cdd4ecdabd440fd0eb",
+  "artifact_sha256": {
+    "scorecard_model.json": "f2c3a5fb2fd5962155512b37d2505409427a3f223bf719f0a030fa3ab3b8822c",
+    "woe_bins.json": "e6a52fdc21fbdb3ed7e5001769ffa588e3f3ce9bfb1252d27cc5b56c7186f2f4",
+    "lgbm_model.txt": "bd9a5a7d320a5357c947a747d683ce3e59f6d00d605d584ebcfea20ae98383af",
+    "cutoff.json": "cbbf272ae985cd26b5fd16cc5ef77f95c7b19b94d5699fb00fd211edc08f7529",
+    "mean_woe.json": "9f200f1d035206d00e046fe74f993f2df6ead6172b87f22b6c272d42ddc77752"
+  }
+}
