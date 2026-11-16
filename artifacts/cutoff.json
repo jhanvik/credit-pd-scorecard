@@ -1,0 +1,13 @@
+{
+  "cutoffs": {
+    "scorecard": 0.3,
+    "LightGBM": 0.36
+  },
+  "assumptions": {
+    "lgd": 0.6,
+    "effect": 0.2,
+    "outreach_cost": 100.0,
+    "false_alarm_cost": 1500.0
+  },
+  "chosen_on": "validation"
+}

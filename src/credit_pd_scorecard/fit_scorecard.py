@@ -11,7 +11,8 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 
-from credit_pd_scorecard import config, scorecard as sc
+from credit_pd_scorecard import config
+from credit_pd_scorecard import scorecard as sc
 from credit_pd_scorecard.report_utils import df_to_markdown
 
 BLUE, ORANGE, INK, MUTED, GRID = "#2a78d6", "#eb6834", "#0b0b0b", "#52514e", "#e6e5e1"
