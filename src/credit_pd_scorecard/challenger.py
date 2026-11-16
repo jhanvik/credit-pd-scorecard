@@ -75,6 +75,7 @@ def main() -> None:
     cvres = pd.DataFrame(search.cv_results_).sort_values("rank_test_score")
     cv_top = cvres[["rank_test_score", "mean_test_score", "std_test_score", *[f"param_{k}" for k in PARAM_SPACE]]].head(5)
 
+    best.booster_.save_model(str(config.DATA_PROCESSED / "lgbm_model.txt"))
     p_lgb_tr, p_lgb_va = best.predict_proba(xtr)[:, 1], best.predict_proba(xva)[:, 1]
     p_sc_va = scorecard_probabilities(woe_valid)
     rows = [
