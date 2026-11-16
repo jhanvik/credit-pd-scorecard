@@ -54,6 +54,9 @@ def main() -> None:
         out.to_parquet(config.DATA_PROCESSED / f"woe_{name}.parquet", index=False)
 
     bins = {f: b.bin_table_.assign(feature=f) for f, b in binners.items()}
+    pd.concat(bins.values(), ignore_index=True)[["feature", "bin", "count", "default_rate", "woe"]].to_parquet(
+        config.DATA_PROCESSED / "woe_bin_tables.parquet", index=False
+    )
     (config.DATA_PROCESSED / "woe_bins.json").write_text(json.dumps(
         {f: {"cuts": [float(c) for c in b.cuts_], "woe": [float(w) for w in b.woe_], "nan_woe": float(b.nan_woe_)}
          for f, b in binners.items()}, indent=2))
