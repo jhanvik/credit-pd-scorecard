@@ -129,7 +129,8 @@ The dataset description does not name the outcome month.
 - Cutoffs were chosen on the validation split, so validation net benefit is optimistic by
   construction. The test figures are the unbiased ones.
 - The challenger is statistically better on AUC but not demonstrably better on business value.
-- The Dockerfile has not been built or run by the author (untested).
+- The Docker image was built and run once on an Apple Silicon Mac (Docker Desktop, linux/arm64) on 2026-11-19,
+  and the demo scored a customer. It has not been tested on other platforms (for example linux/amd64).
 - Fairness: only a sanity check on four attributes, no causal analysis and no legal conclusion.
 
 ## 8. How to run
@@ -178,6 +179,15 @@ Demo app (scores one customer; shows scorecard PD, score, LightGBM PD and reason
 ```zsh
 uv run streamlit run app/streamlit_app.py
 ```
+
+Or in Docker (Docker Desktop must be running):
+
+```zsh
+docker build -t credit-pd-scorecard .
+docker run --rm -p 8501:8501 credit-pd-scorecard
+```
+
+Then open http://localhost:8501.
 
 The scorecard and LightGBM runs are seeded. Regenerating the models should reproduce the reported
 numbers, but if the library versions differ from `uv.lock` small differences are possible.

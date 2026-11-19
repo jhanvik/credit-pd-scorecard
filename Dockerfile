@@ -1,4 +1,5 @@
-# NOT BUILT OR TESTED by the author's tooling: build it locally and fix any errors before relying on it.
+# Built and run once on Apple Silicon (linux/arm64, Docker Desktop) on 2026-11-19; the demo loaded and scored a customer.
+# Not tested on other platforms.
 FROM python:3.12-slim
 
 # LightGBM needs the OpenMP runtime, which slim images do not include.
