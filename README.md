@@ -45,6 +45,18 @@ sensitivity sweep), so treat the absolute net-benefit figures as a demonstration
 The absolute figures are also higher on test than on validation (about NT$3.7M vs NT$2.7M);
 I have not established why and do not rely on them.
 
+## Validation report (self-validation)
+I also wrote a model validation report in the style of a bank's model-risk review, structured around
+the themes of SR 26-2 (conceptual soundness, outcomes analysis, ongoing monitoring). It is a
+**self-validation**: I built the model and wrote the report, so independence is limited, and the report
+lists that as its first finding.
+
+- Outcome: approve with conditions, for demonstration use only. 14 findings (2 High, 7 Medium, 5 Low).
+- Report: [`validation/validation_report.pdf`](validation/validation_report.pdf) (16 pages).
+- Scripts and results: [`validation/`](validation/) (`replicate.py`, `outcomes.py`, `stress.py` and their
+  `*_results.md` outputs). These read validation data only; the consumed test split is not touched.
+- Rating and threshold choices in the report are my own assumptions, labeled as such.
+
 ## 1. Business question
 For each existing credit-card customer, estimate the probability that they will default on next
 month's payment (PD), then choose a cutoff for a risk action (e.g. outreach or a credit-limit
